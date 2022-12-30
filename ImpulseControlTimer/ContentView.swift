@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var impulse: String = ""
+    var value: Int = 1000
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Control your Impulse")
+                .font(.system(size: 15))
+            
+            Form {
+                TextField(
+                        "enter your impuse",
+                        text: $impulse
+                    )
+            }
+            
+            
+            Button {
+                
+            } label: {
+                Text("Confirm")
+            }
         }
-        .padding()
+        
+        
     }
 }
 

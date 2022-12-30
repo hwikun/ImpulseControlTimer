@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2A5D9E295EDA4700C96DA5 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A5D9D295EDA4700C96DA5 /* TimerView.swift */; };
 		BBC80CB7295527DE00A6A7C0 /* ImpulseControlTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80CB6295527DE00A6A7C0 /* ImpulseControlTimerApp.swift */; };
 		BBC80CB9295527DE00A6A7C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80CB8295527DE00A6A7C0 /* ContentView.swift */; };
 		BBC80CBB295527E000A6A7C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC80CBA295527E000A6A7C0 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB2A5D9D295EDA4700C96DA5 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BBC80CB3295527DE00A6A7C0 /* ImpulseControlTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpulseControlTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC80CB6295527DE00A6A7C0 /* ImpulseControlTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseControlTimerApp.swift; sourceTree = "<group>"; };
 		BBC80CB8295527DE00A6A7C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				BBC80CC8295527E000A6A7C0 /* ImpulseControlTimerApp.swift */,
 				BBC80CCA295527E000A6A7C0 /* ContentView.swift */,
+				BB2A5D9D295EDA4700C96DA5 /* TimerView.swift */,
 				BBC80CCC295527E000A6A7C0 /* Assets.xcassets */,
 				BBC80CCE295527E000A6A7C0 /* Preview Content */,
 			);
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2A5D9E295EDA4700C96DA5 /* TimerView.swift in Sources */,
 				BBC80CCB295527E000A6A7C0 /* ContentView.swift in Sources */,
 				BBC80CC9295527E000A6A7C0 /* ImpulseControlTimerApp.swift in Sources */,
 			);
