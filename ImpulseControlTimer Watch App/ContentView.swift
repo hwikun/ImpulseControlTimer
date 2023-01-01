@@ -11,14 +11,24 @@ struct ContentView: View {
     @State private var newImpulse: String = ""
     @State private var impulseArr = UserDefaults.standard.stringArray(forKey: "impulseArr") ?? nil
     var createImpulseArr: Void = UserDefaults.standard.set(["먹기", "자기", "놀기"], forKey: "impulseArr")
+    @State var goToMain: Bool = false
 
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     ForEach(impulseArr ?? [""], id: \.self) { item in
-                        listItem(title: item)
+                        NavigationLink {
+                            TimerView(timerAmount: 5, title: item)
+                        } label: {
+                            HStack {
+                                Text(item)
+                                Spacer()
+                                Text("- 10분")
+                            }
+                        }
                     }
+                    .onDelete(perform: removeList)
                 }
 
                 Section(header: Text("새 충동")) {
@@ -31,22 +41,13 @@ struct ContentView: View {
                         }
                 }
             }
-            .navigationTitle("조절하고 싶은 충동")
+            .navigationTitle("충동 선택하기")
         }
-        .ignoresSafeArea()
     }
 
-    @ViewBuilder
-    private func listItem(title: String, timer: Int = 10) -> some View {
-        NavigationLink {
-            TimerView()
-        } label: {
-            HStack {
-                Text(title)
-                Spacer()
-                Text("- \(timer)분")
-            }
-        }
+    func removeList(at offsets: IndexSet) {
+        impulseArr!.remove(atOffsets: offsets)
+        UserDefaults.standard.set(impulseArr, forKey: "impulseArr")
     }
 }
 

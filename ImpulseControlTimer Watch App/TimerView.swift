@@ -9,39 +9,56 @@ import Combine
 import SwiftUI
 
 struct TimerView: View {
-    let date = Date()
-    @State var timeRemaining: Int = 100
+//    @State var futureDate: Date
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State var timerAmount: Int
+    @State var timeRemaining: Int = 0
+    @State var title: String
+    @State var isOver: Bool = false
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        Text(convertSecondsToTime(timeInSeconds: timeRemaining))
-            .font(.largeTitle)
-            .onReceive(timer) { _ in
-                timeRemaining -= 1
+        VStack {
+            Text("\(title)까지 남은 시간")
+            Text(convertSecondsToTime(timeInSeconds: timeRemaining))
+                .onReceive(timer) { _ in
+                    if timeRemaining > 0 {
+                        timeRemaining -= 1
+                    } else {
+                        timeRemaining = 0
+                        isOver = true
+                    }
+                }
+                .font(.title)
+            if isOver {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("돌아가기")
+                }
             }
-            .onAppear {
-                calcRemain()
-            }
+        }
+        .navigationBarBackButtonHidden()
+        .onAppear {
+            let targetTime = Date().addingTimeInterval(TimeInterval(timerAmount))
+            calcRemain(targetTime: targetTime)
+        }
     }
-        
 
     func convertSecondsToTime(timeInSeconds: Int) -> String {
-        let hours = timeInSeconds / 3600
-        let minutes = (timeInSeconds - hours * 3600) / 60
+        let minutes = timeInSeconds / 60
         let seconds = timeInSeconds % 60
         return String(format: "%02i:%02i", minutes, seconds)
     }
 
-    func calcRemain() {
-        let calendar = Calendar.current
-        let targetTime: Date = calendar.date(byAdding: .second, value: 600, to: date, wrappingComponents: false) ?? Date()
-        let remainSeconds = Int(targetTime.timeIntervalSince(date))
+    func calcRemain(targetTime: Date) {
+        let remainSeconds = Int(targetTime.timeIntervalSince(Date()))
         timeRemaining = remainSeconds
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(timerAmount: 5, title: "afadfas")
     }
 }
