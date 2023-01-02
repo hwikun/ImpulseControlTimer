@@ -1,11 +1,10 @@
 //
 //  TimerView.swift
-//  ImpulseControlTimer Watch App
+//  ImpulseControlTimer
 //
-//  Created by hwikun on 2022/12/30.
+//  Created by hwikun on 2023/01/02.
 //
 
-import Combine
 import SwiftUI
 
 struct TimerView: View {
@@ -28,6 +27,7 @@ struct TimerView: View {
                 } label: {
                     Text("돌아가기")
                 }
+                .padding()
             }
         }
         .navigationBarBackButtonHidden()
@@ -53,6 +53,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(timerAmount: 3, title: "afadfas")
+        TimerView(timerAmount: 3, title: "afdsaf")
     }
 }

@@ -19,7 +19,7 @@ struct ContentView: View {
                 Section {
                     ForEach(impulseArr ?? [""], id: \.self) { item in
                         NavigationLink {
-                            TimerView(timerAmount: 5, title: item)
+                            TimerView(timerAmount: 600, title: item)
                         } label: {
                             HStack {
                                 Text(item)
