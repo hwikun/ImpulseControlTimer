@@ -74,7 +74,9 @@ struct ContentView: View {
             }
             .navigationTitle("충동 선택하기")
         }
+        .padding()
     }
+    
 
     func removeList(at offsets: IndexSet) {
         impulseArr.impulsies.remove(atOffsets: offsets)
