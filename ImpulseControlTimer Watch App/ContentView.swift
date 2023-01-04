@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var impulseArr = UserDefaults.standard.stringArray(forKey: "impulseArr") ?? nil
     var createImpulseArr: Void = UserDefaults.standard.set(["먹기", "자기", "놀기"], forKey: "impulseArr")
     @State var goToMain: Bool = false
+    
 
     var body: some View {
         NavigationStack {
@@ -19,7 +20,7 @@ struct ContentView: View {
                 Section {
                     ForEach(impulseArr ?? [""], id: \.self) { item in
                         NavigationLink {
-                            TimerView(timerAmount: 600, title: item)
+                            TimerView(timerAmount: 3, title: item)
                         } label: {
                             HStack {
                                 Text(item)

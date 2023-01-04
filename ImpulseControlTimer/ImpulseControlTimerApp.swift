@@ -14,4 +14,5 @@ struct ImpulseControlTimerApp: App {
             ContentView()
         }
     }
+    
 }
