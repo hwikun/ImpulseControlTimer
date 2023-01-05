@@ -8,49 +8,15 @@
 import SwiftUI
 import UserNotifications
 
-class NotificationManager: ObservableObject {
-    let notiCenter = UNUserNotificationCenter.current()
-    init() {}
-
-    func requestAuthorization() {
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        UNUserNotificationCenter.current().requestAuthorization(options: options) { _, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("SUCCESS")
-            }
-        }
-    }
-
-    func scheduleNotification(time: Int) {
-        let content = UNMutableNotificationContent()
-        content.title = "Time is Over!!!"
-        content.body = "Enjoy!!!"
-        content.sound = .default
-        content.badge = 1
-
-        let trigger: UNNotificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
-
-        let request = UNNotificationRequest(identifier: "timeOut", content: content, trigger: trigger)
-        notiCenter.add(request)
-    }
-
-    func cancelNotification() {
-        notiCenter.removeAllDeliveredNotifications()
-        notiCenter.removeAllPendingNotificationRequests()
-    }
-}
-
 struct TimerView: View {
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var timerAmount: Int
-    @State var timeRemaining: String = ""
     @State var title: String
+    @State var timeRemaining: String = ""
     @State var isOver: Bool = false
     @State var targetTime: Date = .init()
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var manager = NotificationManager()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack {
@@ -70,6 +36,7 @@ struct TimerView: View {
                 .padding()
             }
         }
+        .padding()
         .navigationBarBackButtonHidden()
         .onAppear {
             targetTime = Date(timeIntervalSinceNow: TimeInterval(timerAmount))
@@ -80,15 +47,48 @@ struct TimerView: View {
 
     func calcRemain(targetTime: Date) {
         let remaining = Int(targetTime.timeIntervalSince(Date()))
-        var minute = (remaining % 3600) / 60
+        var minute = remaining / 60
         var second = remaining % 60
         if minute <= 0 && second <= 0 {
-            isOver = true
             timer.upstream.connect().cancel()
+            isOver = true
             minute = 0
             second = 0
         }
         timeRemaining = String(format: "%02i:%02i", minute, second)
+//        timeRemaining = String(remaining)
+    }
+}
+
+class NotificationManager: ObservableObject {
+    let notiCenter = UNUserNotificationCenter.current()
+
+    func requestAuthorization() {
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { _, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("SUCCESS")
+            }
+        }
+    }
+
+    func scheduleNotification(time: Int) {
+        let content = UNMutableNotificationContent()
+        content.title = "Time is Over!!!"
+        content.body = "Enjoy!!!"
+        content.sound = .default
+
+        let trigger: UNNotificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(time), repeats: false)
+
+        let request = UNNotificationRequest(identifier: "timeOut", content: content, trigger: trigger)
+        notiCenter.add(request)
+    }
+
+    func cancelNotification() {
+        notiCenter.removeAllDeliveredNotifications()
+        notiCenter.removeAllPendingNotificationRequests()
     }
 }
 

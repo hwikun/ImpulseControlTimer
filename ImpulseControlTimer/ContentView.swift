@@ -7,6 +7,78 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    @State private var newImpulse: String = ""
+    @State private var newMinute: String = ""
+    @FocusState private var focusField: Field?
+    @ObservedObject private var impulseArr = ImpulseStore()
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    ForEach(impulseArr.impulsies, id: \.self) { (item: Impulse) in
+                        listItem(title: item.title, minute: item.minute)
+                    }
+                    .onDelete { impulseArr.impulsies.remove(atOffsets: $0) }
+                    .onMove { impulseArr.impulsies.move(fromOffsets: $0, toOffset: $1) }
+                }
+
+                Section(header: Text("새 충동")) {
+                    VStack {
+                        TextField("충동을 입력", text: $newImpulse)
+                            .focused($focusField, equals: .impulse)
+                            .disableAutocorrection(true)
+
+                        Divider()
+
+                        TextField("시간(분)을 입력", text: $newMinute)
+                            .focused($focusField, equals: .minute)
+                            .keyboardType(.numberPad)
+                    }
+                }
+
+                Button("Add") {
+                    if newImpulse.isEmpty {
+                        focusField = .impulse
+                    } else if newMinute.isEmpty {
+                        focusField = .minute
+                    } else {
+                        hideKeyboard()
+                    }
+                    if newImpulse != "" || newMinute != "" {
+                        impulseArr.impulsies.append(Impulse(title: newImpulse, minute: Int(newMinute)!))
+                        newMinute = ""
+                        newImpulse = ""
+                        hideKeyboard()
+                    }
+                }
+            }
+            .navigationTitle("충동 선택하기")
+            .toolbar {
+                EditButton()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func listItem(title: String, minute: Int) -> some View {
+        NavigationLink {
+            TimerView(timerAmount: minute * 60, title: title)
+        } label: {
+            HStack {
+                Text(title)
+                Spacer()
+                Text("- \(minute)분")
+            }
+        }
+    }
+
+    func hideKeyboard() {
+        focusField = nil
+    }
+}
+
 struct Impulse: Codable, Hashable {
     var title: String
     var minute: Int
@@ -34,80 +106,9 @@ class ImpulseStore: ObservableObject {
     }
 }
 
-struct ContentView: View {
-    @State private var newImpulse: String = ""
-    @State private var newMinute: String = ""
-    @FocusState private var isFocused: Bool
-    @ObservedObject private var impulseArr = ImpulseStore()
-
-    var body: some View {
-        NavigationView {
-            List {
-                Section {
-                    ForEach(impulseArr.impulsies, id: \.self) { (item: Impulse) in
-                        listItem(title: item.title, minute: item.minute)
-                    }
-                    .onDelete(perform: removeList)
-                    .onMove(perform: moveList)
-                }
-
-                Section(header: Text("새 충동")) {
-                    Group {
-                        TextField("충동을 입력", text: $newImpulse)
-                            .focused($isFocused)
-                            .disableAutocorrection(true)
-
-                        TextField("시간(분)을 입력", text: $newMinute)
-                            .focused($isFocused)
-                            .keyboardType(.numberPad)
-
-                        Button("Add") {
-                            if newImpulse != "" || newMinute != "" {
-                                impulseArr.impulsies.append(Impulse(title: newImpulse, minute: Int(newMinute)!))
-                                newMinute = ""
-                                newImpulse = ""
-                                isFocused = false
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("충동 선택하기")
-            .toolbar {
-                EditButton()
-            }
-        }
-    }
-
-    func removeList(at offsets: IndexSet) {
-        impulseArr.impulsies.remove(atOffsets: offsets)
-//        saveImpulsies(data: impulseArr.impulsies)
-    }
-
-    func moveList(from fromOffSets: IndexSet, to toOffSets: Int) {
-        impulseArr.impulsies.move(fromOffsets: fromOffSets, toOffset: toOffSets)
-//        saveImpulsies(data: impulseArr.impulsies)
-    }
-
-    func saveImpulsies(data: [Impulse]) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(data) {
-            UserDefaults.standard.set(encoded, forKey: "impulsies")
-        }
-    }
-
-    @ViewBuilder
-    private func listItem(title: String, minute: Int) -> some View {
-        NavigationLink {
-            TimerView(timerAmount: minute * 60, title: title)
-        } label: {
-            HStack {
-                Text(title)
-                Spacer()
-                Text("- \(minute)분")
-            }
-        }
-    }
+enum Field: Hashable {
+    case impulse
+    case minute
 }
 
 struct ContentView_Previews: PreviewProvider {

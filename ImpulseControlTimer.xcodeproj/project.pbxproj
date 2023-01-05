@@ -49,7 +49,7 @@
 		BB2A5D9F29623A3100C96DA5 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		BBC80CB3295527DE00A6A7C0 /* ImpulseControlTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpulseControlTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC80CB6295527DE00A6A7C0 /* ImpulseControlTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseControlTimerApp.swift; sourceTree = "<group>"; };
-		BBC80CB8295527DE00A6A7C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBC80CB8295527DE00A6A7C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		BBC80CBA295527E000A6A7C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBC80CBD295527E000A6A7C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBC80CC3295527E000A6A7C0 /* ImpulseControlTimer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ImpulseControlTimer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
