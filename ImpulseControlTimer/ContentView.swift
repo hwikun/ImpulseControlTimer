@@ -26,31 +26,37 @@ struct ContentView: View {
 
                 Section(header: Text("새 타이머 추가")) {
                     VStack {
-                        TextField("충동을 입력", text: $newImpulse)
+                        TextField("참고 싶은 행동", text: $newImpulse)
                             .focused($focusField, equals: .impulse)
                             .disableAutocorrection(true)
+                            .keyboardType(.default)
 
                         Divider()
 
-                        TextField("시간(분)을 입력", text: $newMinute)
+                        TextField("참을 시간(분)", text: $newMinute)
                             .focused($focusField, equals: .minute)
                             .keyboardType(.numberPad)
                     }
-                }
+                    Button {
+                        if newImpulse.isEmpty {
+                            focusField = .impulse
+                        } else if newMinute.isEmpty {
+                            focusField = .minute
+                        } else {
+                            hideKeyboard()
+                        }
 
-                Button("Add") {
-                    if newImpulse.isEmpty {
-                        focusField = .impulse
-                    } else if newMinute.isEmpty {
-                        focusField = .minute
-                    } else {
-                        hideKeyboard()
-                    }
-                    if newImpulse != "" || newMinute != "" {
-                        impulseArr.impulsies.append(Impulse(title: newImpulse, minute: Int(newMinute)!))
-                        newMinute = ""
-                        newImpulse = ""
-                        hideKeyboard()
+                        if newImpulse != "" && newMinute != "" {
+                            impulseArr.impulsies.append(Impulse(title: newImpulse, minute: Int(newMinute)!))
+                            newMinute = ""
+                            newImpulse = ""
+                            hideKeyboard()
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add Timer")
+                        }
                     }
                 }
             }
@@ -69,7 +75,7 @@ struct ContentView: View {
             HStack {
                 Text(title)
                 Spacer()
-                Text("- \(minute)분")
+                Text("\(minute)분 참기")
             }
         }
     }
