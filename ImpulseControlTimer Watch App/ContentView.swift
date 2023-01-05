@@ -13,9 +13,9 @@ struct ContentView: View {
     @ObservedObject private var impulseArr = ImpulseStore()
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
-                Section {
+                Section(header: Text("타이머 리스트")) {
                     ForEach(impulseArr.impulsies, id: \.self) { (item: Impulse) in
                         listItem(title: item.title, minute: item.minute)
                     }
@@ -23,7 +23,7 @@ struct ContentView: View {
                     .onMove { impulseArr.impulsies.move(fromOffsets: $0, toOffset: $1) }
                 }
 
-                Section(header: Text("새 충동")) {
+                Section(header: Text("새 타이머 추가")) {
                     TextField("충동을 입력", text: $newImpulse)
 
                     TextField("시간(분)을 입력", text: $newMinute)
@@ -37,7 +37,6 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("충동 선택하기")
         }
         .padding()
     }

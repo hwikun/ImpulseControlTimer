@@ -14,9 +14,9 @@ struct ContentView: View {
     @ObservedObject private var impulseArr = ImpulseStore()
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
-                Section {
+                Section(header: Text("타이머 리스트")) {
                     ForEach(impulseArr.impulsies, id: \.self) { (item: Impulse) in
                         listItem(title: item.title, minute: item.minute)
                     }
@@ -24,7 +24,7 @@ struct ContentView: View {
                     .onMove { impulseArr.impulsies.move(fromOffsets: $0, toOffset: $1) }
                 }
 
-                Section(header: Text("새 충동")) {
+                Section(header: Text("새 타이머 추가")) {
                     VStack {
                         TextField("충동을 입력", text: $newImpulse)
                             .focused($focusField, equals: .impulse)
@@ -54,7 +54,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("충동 선택하기")
+            .navigationTitle("충동 타이머")
             .toolbar {
                 EditButton()
             }
