@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB0698712967A8DE006E30FA /* ImpulseTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0698702967A8DE006E30FA /* ImpulseTimerApp.swift */; };
+		BB0698752967A8DF006E30FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0698742967A8DF006E30FA /* Assets.xcassets */; };
+		BB0698782967A8DF006E30FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0698772967A8DF006E30FA /* Preview Assets.xcassets */; };
+		BB06987D2967A960006E30FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06987C2967A960006E30FA /* ContentView.swift */; };
+		BB06987F2967A993006E30FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06987E2967A993006E30FA /* TimerView.swift */; };
+		BB48A3692967A3AC00E0738D /* ImpulseWatchTimer Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BB48A3682967A3AC00E0738D /* ImpulseWatchTimer Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB48A36E2967A3AC00E0738D /* ImpulseWatchTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48A36D2967A3AC00E0738D /* ImpulseWatchTimerApp.swift */; };
+		BB48A3702967A3AC00E0738D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48A36F2967A3AC00E0738D /* ContentView.swift */; };
+		BB48A3722967A3AD00E0738D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB48A3712967A3AD00E0738D /* Assets.xcassets */; };
+		BB48A3752967A3AD00E0738D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB48A3742967A3AD00E0738D /* Preview Assets.xcassets */; };
+		BBDFA5612967A52B0074465B /* SwiftUI Apple Watch Decimal Pad in Frameworks */ = {isa = PBXBuildFile; productRef = BBDFA5602967A52B0074465B /* SwiftUI Apple Watch Decimal Pad */; };
+		BBDFA5632967A5E90074465B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFA5622967A5E90074465B /* TimerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB48A36A2967A3AC00E0738D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB48A35C2967A3AC00E0738D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB48A3672967A3AC00E0738D;
+			remoteInfo = "ImpulseWatchTimer Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB48A37B2967A3AD00E0738D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BB48A3692967A3AC00E0738D /* ImpulseWatchTimer Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BB06986E2967A8DE006E30FA /* ImpulseTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpulseTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0698702967A8DE006E30FA /* ImpulseTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseTimerApp.swift; sourceTree = "<group>"; };
+		BB0698742967A8DF006E30FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB0698772967A8DF006E30FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB06987C2967A960006E30FA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../Desktop/ImpulseControlTimer/ContentView.swift; sourceTree = "<group>"; };
+		BB06987E2967A993006E30FA /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerView.swift; path = ../../../../../Desktop/ImpulseControlTimer/TimerView.swift; sourceTree = "<group>"; };
+		BB48A3622967A3AC00E0738D /* ImpulseWatchTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpulseWatchTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB48A3682967A3AC00E0738D /* ImpulseWatchTimer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ImpulseWatchTimer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB48A36D2967A3AC00E0738D /* ImpulseWatchTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpulseWatchTimerApp.swift; sourceTree = "<group>"; };
+		BB48A36F2967A3AC00E0738D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB48A3712967A3AD00E0738D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB48A3742967A3AD00E0738D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBDFA5622967A5E90074465B /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB06986B2967A8DE006E30FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB48A3652967A3AC00E0738D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDFA5612967A52B0074465B /* SwiftUI Apple Watch Decimal Pad in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB06986F2967A8DE006E30FA /* ImpulseTimer */ = {
+			isa = PBXGroup;
+			children = (
+				BB0698702967A8DE006E30FA /* ImpulseTimerApp.swift */,
+				BB06987C2967A960006E30FA /* ContentView.swift */,
+				BB06987E2967A993006E30FA /* TimerView.swift */,
+				BB0698742967A8DF006E30FA /* Assets.xcassets */,
+				BB0698762967A8DF006E30FA /* Preview Content */,
+			);
+			path = ImpulseTimer;
+			sourceTree = "<group>";
+		};
+		BB0698762967A8DF006E30FA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB0698772967A8DF006E30FA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB48A35B2967A3AC00E0738D = {
+			isa = PBXGroup;
+			children = (
+				BB48A36C2967A3AC00E0738D /* ImpulseWatchTimer Watch App */,
+				BB06986F2967A8DE006E30FA /* ImpulseTimer */,
+				BB48A3632967A3AC00E0738D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB48A3632967A3AC00E0738D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB48A3622967A3AC00E0738D /* ImpulseWatchTimer.app */,
+				BB48A3682967A3AC00E0738D /* ImpulseWatchTimer Watch App.app */,
+				BB06986E2967A8DE006E30FA /* ImpulseTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB48A36C2967A3AC00E0738D /* ImpulseWatchTimer Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				BBDFA5622967A5E90074465B /* TimerView.swift */,
+				BB48A36D2967A3AC00E0738D /* ImpulseWatchTimerApp.swift */,
+				BB48A36F2967A3AC00E0738D /* ContentView.swift */,
+				BB48A3712967A3AD00E0738D /* Assets.xcassets */,
+				BB48A3732967A3AD00E0738D /* Preview Content */,
+			);
+			path = "ImpulseWatchTimer Watch App";
+			sourceTree = "<group>";
+		};
+		BB48A3732967A3AD00E0738D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB48A3742967A3AD00E0738D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB06986D2967A8DE006E30FA /* ImpulseTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB06987B2967A8DF006E30FA /* Build configuration list for PBXNativeTarget "ImpulseTimer" */;
+			buildPhases = (
+				BB06986A2967A8DE006E30FA /* Sources */,
+				BB06986B2967A8DE006E30FA /* Frameworks */,
+				BB06986C2967A8DE006E30FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImpulseTimer;
+			productName = ImpulseTimer;
+			productReference = BB06986E2967A8DE006E30FA /* ImpulseTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB48A3612967A3AC00E0738D /* ImpulseWatchTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB48A37C2967A3AD00E0738D /* Build configuration list for PBXNativeTarget "ImpulseWatchTimer" */;
+			buildPhases = (
+				BB48A3602967A3AC00E0738D /* Resources */,
+				BB48A37B2967A3AD00E0738D /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB48A36B2967A3AC00E0738D /* PBXTargetDependency */,
+			);
+			name = ImpulseWatchTimer;
+			productName = ImpulseWatchTimer;
+			productReference = BB48A3622967A3AC00E0738D /* ImpulseWatchTimer.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		BB48A3672967A3AC00E0738D /* ImpulseWatchTimer Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB48A3782967A3AD00E0738D /* Build configuration list for PBXNativeTarget "ImpulseWatchTimer Watch App" */;
+			buildPhases = (
+				BB48A3642967A3AC00E0738D /* Sources */,
+				BB48A3652967A3AC00E0738D /* Frameworks */,
+				BB48A3662967A3AC00E0738D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ImpulseWatchTimer Watch App";
+			packageProductDependencies = (
+				BBDFA5602967A52B0074465B /* SwiftUI Apple Watch Decimal Pad */,
+			);
+			productName = "ImpulseWatchTimer Watch App";
+			productReference = BB48A3682967A3AC00E0738D /* ImpulseWatchTimer Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB48A35C2967A3AC00E0738D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					BB06986D2967A8DE006E30FA = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					BB48A3612967A3AC00E0738D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					BB48A3672967A3AC00E0738D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = BB48A35F2967A3AC00E0738D /* Build configuration list for PBXProject "ImpulseWatchTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ko,
+			);
+			mainGroup = BB48A35B2967A3AC00E0738D;
+			packageReferences = (
+				BBDFA55F2967A52B0074465B /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */,
+			);
+			productRefGroup = BB48A3632967A3AC00E0738D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB48A3612967A3AC00E0738D /* ImpulseWatchTimer */,
+				BB48A3672967A3AC00E0738D /* ImpulseWatchTimer Watch App */,
+				BB06986D2967A8DE006E30FA /* ImpulseTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB06986C2967A8DE006E30FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB0698782967A8DF006E30FA /* Preview Assets.xcassets in Resources */,
+				BB0698752967A8DF006E30FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB48A3602967A3AC00E0738D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB48A3662967A3AC00E0738D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB48A3752967A3AD00E0738D /* Preview Assets.xcassets in Resources */,
+				BB48A3722967A3AD00E0738D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB06986A2967A8DE006E30FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB06987F2967A993006E30FA /* TimerView.swift in Sources */,
+				BB0698712967A8DE006E30FA /* ImpulseTimerApp.swift in Sources */,
+				BB06987D2967A960006E30FA /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB48A3642967A3AC00E0738D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDFA5632967A5E90074465B /* TimerView.swift in Sources */,
+				BB48A3702967A3AC00E0738D /* ContentView.swift in Sources */,
+				BB48A36E2967A3AC00E0738D /* ImpulseWatchTimerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB48A36B2967A3AC00E0738D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB48A3672967A3AC00E0738D /* ImpulseWatchTimer Watch App */;
+			targetProxy = BB48A36A2967A3AC00E0738D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BB0698792967A8DF006E30FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ImpulseTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB06987A2967A8DF006E30FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ImpulseTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB48A3762967A3AD00E0738D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB48A3772967A3AD00E0738D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BB48A3792967A3AD00E0738D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ImpulseWatchTimer Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ImpulseWatchTimer;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseWatchTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		BB48A37A2967A3AD00E0738D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ImpulseWatchTimer Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ImpulseWatchTimer;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseWatchTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		BB48A37D2967A3AD00E0738D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				INFOPLIST_KEY_CFBundleDisplayName = ImpulseWatchTimer;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseWatchTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BB48A37E2967A3AD00E0738D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X9THM5Y3L;
+				INFOPLIST_KEY_CFBundleDisplayName = ImpulseWatchTimer;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwikun.ImpulseWatchTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB06987B2967A8DF006E30FA /* Build configuration list for PBXNativeTarget "ImpulseTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB0698792967A8DF006E30FA /* Debug */,
+				BB06987A2967A8DF006E30FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB48A35F2967A3AC00E0738D /* Build configuration list for PBXProject "ImpulseWatchTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB48A3762967A3AD00E0738D /* Debug */,
+				BB48A3772967A3AD00E0738D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB48A3782967A3AD00E0738D /* Build configuration list for PBXNativeTarget "ImpulseWatchTimer Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB48A3792967A3AD00E0738D /* Debug */,
+				BB48A37A2967A3AD00E0738D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB48A37C2967A3AD00E0738D /* Build configuration list for PBXNativeTarget "ImpulseWatchTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB48A37D2967A3AD00E0738D /* Debug */,
+				BB48A37E2967A3AD00E0738D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBDFA55F2967A52B0074465B /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApplebaumIan/SwiftUI-Apple-Watch-Decimal-Pad.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBDFA5602967A52B0074465B /* SwiftUI Apple Watch Decimal Pad */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDFA55F2967A52B0074465B /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */;
+			productName = "SwiftUI Apple Watch Decimal Pad";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BB48A35C2967A3AC00E0738D /* Project object */;
+}
