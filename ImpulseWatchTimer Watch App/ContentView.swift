@@ -1,11 +1,12 @@
 //
 //  ContentView.swift
-//  ImpulseControlTimer
+//  ImpulseControlTimer Watch App
 //
 //  Created by hwikun on 2022/12/23.
 //
 
 import SwiftUI
+import SwiftUI_Apple_Watch_Decimal_Pad
 
 struct ContentView: View {
     @State private var newImpulse: String = ""
@@ -25,18 +26,11 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("새 타이머 추가")) {
-                    VStack {
-                        TextField("참고 싶은 행동", text: $newImpulse)
-                            .focused($focusField, equals: .impulse)
-                            .disableAutocorrection(true)
-                            .keyboardType(.default)
+                    TextField("참고 싶은 행동", text: $newImpulse)
+                    DigiTextView(placeholder: "참을 시간(분)", text: $newMinute, presentingModal: false, alignment: .leading, style: .numbers)
+                        .cornerRadius(11)
+                        .padding(.horizontal, -10)
 
-                        Divider()
-
-                        TextField("참을 시간(분)", text: $newMinute)
-                            .focused($focusField, equals: .minute)
-                            .keyboardType(.numberPad)
-                    }
                     Button {
                         if newImpulse.isEmpty {
                             focusField = .impulse
@@ -45,12 +39,10 @@ struct ContentView: View {
                         } else {
                             hideKeyboard()
                         }
-
                         if newImpulse != "" && newMinute != "" {
                             impulseArr.impulsies.append(Impulse(title: newImpulse, minute: Int(newMinute)!))
                             newMinute = ""
                             newImpulse = ""
-                            hideKeyboard()
                         }
                     } label: {
                         HStack {
@@ -59,10 +51,6 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-            .navigationTitle("충동 타이머")
-            .toolbar {
-                EditButton()
             }
         }
     }
@@ -75,7 +63,7 @@ struct ContentView: View {
             HStack {
                 Text(title)
                 Spacer()
-                Text("\(minute)분 참기")
+                Text("- \(minute)분 참기")
             }
         }
     }
